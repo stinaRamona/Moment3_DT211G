@@ -1,0 +1,10 @@
+$font-stack: Segoe UI, Tahoma; 
+$primary-color:rgb(80, 80, 170); 
+$dark-primarycolor: darken($primary-color, 20%); 
+$light-primarycolor: lighten($primary-color, 20%); 
+
+body {
+    font-family: $font-stack;
+    background-color: $light-primarycolor; 
+    color: $dark-primarycolor; 
+}

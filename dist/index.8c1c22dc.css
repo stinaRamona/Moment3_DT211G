@@ -1,0 +1,20 @@
+body {
+  color: #2f2f65;
+  background-color: #9494cc;
+  font-family: Segoe UI, Tahoma;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav li {
+  display: inline;
+}
+
+nav a {
+  text-decoration: none;
+  display: inline;
+}
+
+/*# sourceMappingURL=index.8c1c22dc.css.map */
