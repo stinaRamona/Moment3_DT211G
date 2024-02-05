@@ -1,7 +1,21 @@
 body {
-  color: #2f2f65;
-  background-color: #9494cc;
+  color: #492344;
+  background-color: #f6edf6;
   font-family: Segoe UI, Tahoma;
+}
+
+nav {
+  color: #492344;
+  background-color: #be7ab6;
+}
+
+nav a {
+  color: #492344;
+}
+
+nav {
+  justify-content: space-between;
+  display: flex;
 }
 
 nav ul {
@@ -13,8 +27,21 @@ nav li {
 }
 
 nav a {
+  padding: 15px;
+  font-size: 1.5em;
+  font-weight: bold;
   text-decoration: none;
   display: inline;
+}
+
+nav p {
+  padding: 15px;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+#navbar {
+  padding: 15px;
 }
 
 /*# sourceMappingURL=index.8c1c22dc.css.map */

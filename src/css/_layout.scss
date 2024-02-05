@@ -1,4 +1,7 @@
 nav {
+    display: flex;
+    justify-content:space-between;
+
     ul {
         list-style: none;
 
@@ -12,5 +15,18 @@ nav {
         display: block;
         text-decoration: none;
         display: inline;
+        padding:15px; 
+        font-size:1.5em; 
+        font-weight: bold;
+    } 
+
+    p {
+        padding:15px; 
+        font-size:1.5em; 
+        font-weight: bold;
     }
+} 
+
+#navbar {
+    padding:15px;  
 }
