@@ -14,11 +14,42 @@ nav a {
 }
 
 main {
+  color: #492344;
   background-color: #e5cbe5;
+}
+
+@media (prefers-color-scheme: dark) {
+  main {
+    color: #f6edf6;
+    background-color: #492344;
+  }
 }
 
 footer {
   background-color: #be7ab6;
+}
+
+#test1, #test2 {
+  color: #492344;
+  background-color: #be7ab6;
+  border: none;
+  font-size: 1em;
+}
+
+#test2 {
+  padding: 5px;
+  font-weight: bold;
+}
+
+#dorisHamt {
+  border-radius: 4%;
+  height: 400px;
+}
+
+#dorisSov {
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
 }
 
 body {
@@ -69,12 +100,23 @@ footer {
   text-align: center;
   width: 100%;
   height: 100px;
-  position: absolute;
+  margin-top: 60px;
+  position: relative;
   bottom: 0;
 }
 
 footer p {
   font-weight: bold;
+}
+
+#dorisHamt {
+  float: right;
+  margin: 10px;
+}
+
+#dorisSov {
+  float: left;
+  margin: 10px;
 }
 
 /*# sourceMappingURL=index.8c1c22dc.css.map */

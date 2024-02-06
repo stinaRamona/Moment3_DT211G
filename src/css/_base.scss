@@ -1,3 +1,5 @@
+//SCSS som rör font, färg, form och bilder 
+
 $font-stack: Segoe UI, Tahoma; 
 $background-light: #f6edf6;
 $background-main: darken($background-light, 10%);
@@ -5,6 +7,11 @@ $primary-color:#8d4585;
 $dark-primarycolor: darken($primary-color, 20%); 
 $light-primarycolor: lighten($primary-color, 20%); 
 
+//mixins
+@mixin picture($height, $radius:0) {
+    height: $height;
+    border-radius: $radius;
+}
 
 body {
     font-family: $font-stack;
@@ -22,8 +29,41 @@ nav {
 
 main {
     background-color:$background-main;
+    color:$dark-primarycolor; 
+}
+
+//om användaren föredrar mörkt tema
+@media (prefers-color-scheme: dark) {
+    main {
+        background-color:$dark-primarycolor; 
+        color:$background-light; 
+    }
 }
 
 footer {
     background-color: $light-primarycolor;
+} 
+
+//Knappar - test med selector
+#test1 {
+    font-size:1em; 
+    color: $dark-primarycolor;
+    background-color: $light-primarycolor; 
+    border:none; 
+}
+
+#test2 {
+    @extend #test1 ;
+    padding:5px;
+    font-weight: bold; 
+}
+
+//Bilder 
+#dorisHamt {
+    @include picture(400px, $radius: 4%)
+} 
+
+#dorisSov {
+    @include picture(300px, $radius:50%);
+    width:300px; 
 }

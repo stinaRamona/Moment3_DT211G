@@ -1,3 +1,5 @@
+//SCSS som rör layout: vart saker ska vara 
+
 body{
     margin:0; 
 }
@@ -41,18 +43,30 @@ main {
     margin-right:30%; 
     margin-top:2%; 
     padding:2%; 
+    padding-bottom:2%; 
     
     box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.151)
 }
 
 footer {
     text-align: center; 
-    position:absolute; 
+    position:relative; 
     bottom:0;  
     height: 100px; 
     width:100%; 
+    margin-top:60px; 
     
     p {
         font-weight:bold; 
     }
+} 
+
+#dorisHamt {
+    float: right;
+    margin:10px; 
+} 
+
+#dorisSov {
+    float: left; 
+    margin:10px; 
 }
