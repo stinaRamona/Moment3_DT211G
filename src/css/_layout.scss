@@ -1,6 +1,11 @@
+body{
+    margin:0; 
+}
+
 nav {
     display: flex;
     justify-content:space-between;
+    box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.151);
 
     ul {
         list-style: none;
@@ -29,4 +34,25 @@ nav {
 
 #navbar {
     padding:15px;  
+} 
+
+main {
+    margin-left:30%; 
+    margin-right:30%; 
+    margin-top:2%; 
+    padding:2%; 
+    
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.151)
+}
+
+footer {
+    text-align: center; 
+    position:absolute; 
+    bottom:0;  
+    height: 100px; 
+    width:100%; 
+    
+    p {
+        font-weight:bold; 
+    }
 }

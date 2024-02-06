@@ -1,5 +1,6 @@
 $font-stack: Segoe UI, Tahoma; 
 $background-light: #f6edf6;
+$background-main: darken($background-light, 10%);
 $primary-color:#8d4585; 
 $dark-primarycolor: darken($primary-color, 20%); 
 $light-primarycolor: lighten($primary-color, 20%); 
@@ -17,4 +18,12 @@ nav {
     a {
         color:$dark-primarycolor;
     }
+} 
+
+main {
+    background-color:$background-main;
+}
+
+footer {
+    background-color: $light-primarycolor;
 }
