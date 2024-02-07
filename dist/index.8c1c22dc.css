@@ -23,6 +23,26 @@ main {
     color: #f6edf6;
     background-color: #492344;
   }
+
+  body {
+    background-color: #6d6772;
+  }
+
+  body footer {
+    background-color: #492344;
+  }
+
+  body footer p {
+    color: #f6edf6;
+  }
+
+  nav {
+    background-color: #492344;
+  }
+
+  nav a, nav p {
+    color: #f6edf6;
+  }
 }
 
 footer {
@@ -88,12 +108,20 @@ nav p {
   padding: 15px;
 }
 
+#hamburgerNav {
+  display: none;
+}
+
 main {
   margin-top: 2%;
-  margin-left: 30%;
-  margin-right: 30%;
+  margin-left: 25%;
+  margin-right: 25%;
   padding: 2%;
   box-shadow: 3px 3px 3px 3px #00000027;
+}
+
+main p {
+  max-width: 45em;
 }
 
 footer {
@@ -117,6 +145,50 @@ footer p {
 #dorisSov {
   float: left;
   margin: 10px;
+}
+
+@media (width <= 1320px) and (width >= 800px) {
+  main {
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+}
+
+@media (width <= 800px) {
+  main {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  #navbar {
+    display: none;
+  }
+
+  #hamburgerNav {
+    background-color: #be7ab6;
+    height: 100vh;
+    padding: 2%;
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+  }
+
+  #hamburgerNav ul {
+    list-style: none;
+  }
+
+  #hamburgerNav li {
+    margin-right: 30px;
+    padding: 2%;
+  }
+
+  #hamburgerNav a {
+    color: #492344;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: none;
+  }
 }
 
 /*# sourceMappingURL=index.8c1c22dc.css.map */

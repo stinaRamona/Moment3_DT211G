@@ -37,7 +37,29 @@ main {
     main {
         background-color:$dark-primarycolor; 
         color:$background-light; 
+    } 
+
+    body {
+        background-color:rgb(109, 103, 114); 
+        footer {//behövde ligga i boduy för att bli targetad
+            background-color:$dark-primarycolor; 
+            p {
+                color:$background-light; 
+            }
+        }
+    } 
+
+    nav {
+        background-color:$dark-primarycolor; 
+        a {
+            color:$background-light
+        }
+
+        p {
+            color:$background-light
+        }
     }
+
 }
 
 footer {

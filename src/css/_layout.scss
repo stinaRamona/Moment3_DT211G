@@ -1,5 +1,5 @@
 //SCSS som rör layout: vart saker ska vara 
-
+@use "base"; 
 body{
     margin:0; 
 }
@@ -38,13 +38,21 @@ nav {
     padding:15px;  
 } 
 
+#hamburgerNav {
+    display:none; 
+}
+
 main {
-    margin-left:30%; 
-    margin-right:30%; 
+    margin-left:25%; 
+    margin-right:25%; 
     margin-top:2%; 
     padding:2%; 
     
-    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.151)
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.151);
+
+    p {
+        max-width:45em; 
+    }
 }
 
 footer {
@@ -68,4 +76,49 @@ footer {
 #dorisSov {
     float: left; 
     margin:10px; 
+} 
+
+//Responsivitet 
+@media (max-width:1320px) and (min-width:800px) {
+    main {
+        margin-left:15%; 
+        margin-right:15%; 
+    }
+} 
+
+@media (max-width:800px) {
+    main {
+    margin-left: 5%; 
+    margin-right: 5%; 
+    }
+
+    #navbar {
+        display:none; 
+    } 
+
+    #hamburgerNav {
+        display:none; 
+        right:0;   
+        top:0; 
+        background-color: base.$light-primarycolor; 
+        height:100vh; 
+        position:fixed; 
+        padding:2%; 
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            margin-right:30px; 
+            padding:2%; 
+        }
+
+        a {
+            text-decoration:none; 
+            font-weight: bold;
+            color: base.$dark-primarycolor; 
+            font-size:1.5em; 
+        }
+    }
 }
