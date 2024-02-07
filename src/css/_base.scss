@@ -11,6 +11,22 @@ $light-primarycolor: lighten($primary-color, 20%);
 @mixin picture($height, $radius:0) {
     height: $height;
     border-radius: $radius;
+} 
+
+@mixin font-size($size){
+    font-size: $size;
+    font-weight:bold; 
+
+    //Ändrar färg på h1 baserat på fontstorlek
+    @if $size > 1em {
+        color:gray; 
+    } @else {
+        color:red; 
+    }
+}
+
+h1 {
+    @include font-size(2em)
 }
 
 body {
@@ -30,7 +46,7 @@ nav {
 main {
     background-color:$background-main;
     color:$dark-primarycolor; 
-}
+} 
 
 //om användaren föredrar mörkt tema
 @media (prefers-color-scheme: dark) {
@@ -57,8 +73,13 @@ main {
 
         p {
             color:$background-light
+        } 
+
+        #openHamNav {
+            background-color:$dark-primarycolor; 
+            color:$background-light; 
         }
-    }
+    } 
 
 }
 
@@ -78,6 +99,17 @@ footer {
     @extend #test1 ;
     padding:5px;
     font-weight: bold; 
+} 
+
+#openHamNav {
+    @extend #test1 ; 
+    font-weight:bold; 
+    font-size:1.5em; 
+}
+
+#closeHamNav {
+    @extend #test1 ; 
+    font-weight:bold; 
 }
 
 //Bilder 

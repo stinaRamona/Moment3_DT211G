@@ -1,3 +1,9 @@
+h1 {
+  color: gray;
+  font-size: 2em;
+  font-weight: bold;
+}
+
 body {
   color: #492344;
   background-color: #f6edf6;
@@ -43,13 +49,18 @@ main {
   nav a, nav p {
     color: #f6edf6;
   }
+
+  nav #openHamNav {
+    color: #f6edf6;
+    background-color: #492344;
+  }
 }
 
 footer {
   background-color: #be7ab6;
 }
 
-#test1, #test2 {
+#test1, #closeHamNav, #openHamNav, #test2 {
   color: #492344;
   background-color: #be7ab6;
   border: none;
@@ -58,6 +69,15 @@ footer {
 
 #test2 {
   padding: 5px;
+  font-weight: bold;
+}
+
+#openHamNav {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+#closeHamNav {
   font-weight: bold;
 }
 
