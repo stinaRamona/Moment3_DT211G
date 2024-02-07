@@ -108,7 +108,7 @@ nav p {
   padding: 15px;
 }
 
-#hamburgerNav {
+#hamburgerNav, #openHamNav {
   display: none;
 }
 
@@ -188,6 +188,10 @@ footer p {
     font-size: 1.5em;
     font-weight: bold;
     text-decoration: none;
+  }
+
+  #openHamNav {
+    display: block;
   }
 }
 

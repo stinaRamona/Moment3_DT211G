@@ -4,24 +4,20 @@
 
 //läser in element 
 
-let openButtonEL = document.getElementById("openHamNav") 
-let closeButtonEl = document.getElementById("closeHamNav")
+let hamNavBtnEl = document.getElementById("openHamNav"); 
+let hamNavCloseEl = document.getElementById("closeHamNav")
 
-//händelsehanterare 
-openButtonEL.addEventListener('click', toggleMenu)
-closeButtonEl.addEventListener('click', toggleMenu)
+hamNavBtnEl.addEventListener('click', toggleMenu); 
+hamNavCloseEl.addEventListener('click', toggleMenu); 
 
-//funktioner 
-function toggleMenu (){
-    //vill att side_nav ska börja synas vid tryck på knappen 
-    let sideNavEl = document.getElementById("hamburgerNav")
+function toggleMenu() {
+    let hamNavEl = document.getElementById("hamburgerNav");
 
-    let style = window.getComputedStyle(sideNavEl)
+    let style = window.getComputedStyle(hamNavEl); 
 
-    if(style.display === "none") {
-        sideNavEl.style.display = "block"
+    if (style.display === "none"){
+        hamNavEl.style.display = "block"
     } else {
-        sideNavEl.style.display = "none"
+        hamNavEl.style.display = "none"
     }
-    
 }

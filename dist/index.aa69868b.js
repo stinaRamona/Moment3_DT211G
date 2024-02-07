@@ -1,18 +1,15 @@
 //För att göra en responsiv hamburgermeny 
 "use strict";
 //läser in element 
-let openButtonEL = document.getElementById("openHamNav");
-let closeButtonEl = document.getElementById("closeHamNav");
-//händelsehanterare 
-openButtonEL.addEventListener("click", toggleMenu);
-closeButtonEl.addEventListener("click", toggleMenu);
-//funktioner 
+let hamNavBtnEl = document.getElementById("openHamNav");
+let hamNavCloseEl = document.getElementById("closeHamNav");
+hamNavBtnEl.addEventListener("click", toggleMenu);
+hamNavCloseEl.addEventListener("click", toggleMenu);
 function toggleMenu() {
-    //vill att side_nav ska börja synas vid tryck på knappen 
-    let sideNavEl = document.getElementById("hamburgerNav");
-    let style = window.getComputedStyle(sideNavEl);
-    if (style.display === "none") sideNavEl.style.display = "block";
-    else sideNavEl.style.display = "none";
+    let hamNavEl = document.getElementById("hamburgerNav");
+    let style = window.getComputedStyle(hamNavEl);
+    if (style.display === "none") hamNavEl.style.display = "block";
+    else hamNavEl.style.display = "none";
 }
 
 //# sourceMappingURL=index.aa69868b.js.map
