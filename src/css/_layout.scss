@@ -133,7 +133,7 @@ footer {
     }
 }
 
-/*Animering*/
+/*Animering test*/
 #animation1 {
     width:100px; 
     height: 100px; 
@@ -141,4 +141,16 @@ footer {
     margin: 0 auto;
     color:white; 
     text-align: center;
+} 
+
+/*Animering boll*/
+#bollBild {
+    width:100%; 
+    height:100% 
+}
+
+#pictureContainer {
+    width:200px; 
+    height:200px; 
+    animation: movePicture 5s infinite alternate linear; 
 }

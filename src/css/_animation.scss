@@ -8,4 +8,13 @@
     100% {
         background-color: maroon;
     }
+} 
+
+@keyframes movePicture {
+    from {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+    to {
+        transform:translate(650px, 0px) rotate(359deg);
+    }
 }
