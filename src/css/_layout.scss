@@ -1,5 +1,7 @@
 //SCSS som rör layout: vart saker ska vara 
 @use "base"; 
+@use "animation"; 
+
 body{
     margin:0; 
 }
@@ -129,4 +131,14 @@ footer {
     #openHamNav {
         display:block; 
     }
+}
+
+/*Animering*/
+#animation1 {
+    width:100px; 
+    height: 100px; 
+    animation: changeColor 5s alternate infinite;
+    margin: 0 auto;
+    color:white; 
+    text-align: center;
 }

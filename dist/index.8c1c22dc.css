@@ -92,6 +92,20 @@ footer {
   height: 300px;
 }
 
+@keyframes changeColor {
+  0% {
+    background-color: #228b22;
+  }
+
+  50% {
+    background-color: #daa520;
+  }
+
+  100% {
+    background-color: maroon;
+  }
+}
+
 body {
   margin: 0;
 }
@@ -213,6 +227,15 @@ footer p {
   #openHamNav {
     display: block;
   }
+}
+
+#animation1 {
+  color: #fff;
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  animation: 5s infinite alternate changeColor;
 }
 
 /*# sourceMappingURL=index.8c1c22dc.css.map */
