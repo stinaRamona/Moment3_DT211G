@@ -131,6 +131,7 @@ footer {
     #openHamNav {
         display:block; 
     }
+
 }
 
 /*Animering test*/
@@ -153,4 +154,48 @@ footer {
     width:200px; 
     height:200px; 
     animation: movePicture 5s infinite alternate linear; 
+} 
+
+#bollHeading {
+    margin-left: 25%; 
+}
+
+/*Animering text*/
+#animation2 {
+    font-size:2em; 
+    color:black; 
+    transition-property: color font-size;
+    transition-duration: 1s;
+}
+
+#animation2:hover {
+    color: base.$primary-color; 
+    font-size: 2.5em; 
+} 
+
+/*Animering knapp*/
+#animation3 {
+    @extend #test1 ; 
+    font-size:2em; 
+    border-radius:10px;  
+    box-shadow: 0 10px #818181;
+    cursor: pointer; 
+}
+
+#animation3:hover {
+    background-color: #693463;
+    color: base.$light-primarycolor; 
+}
+
+#animation3:active {
+    background-color: #693463;
+    color: base.$light-primarycolor; 
+    transform: translateY(5px);
+    box-shadow: 0 4px #515151;
+} 
+
+#floatingTxt {
+    color:black;
+    font-size:2em; 
+    animation: floatItem 2s infinite alternate ease-in-out; 
 }

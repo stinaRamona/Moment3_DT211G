@@ -15,6 +15,21 @@
         transform: translate(0px, 0px) rotate(0deg);
     }
     to {
-        transform:translate(650px, 0px) rotate(359deg);
+        transform:translate(50vw, 0px) rotate(359deg);
+    }
+} 
+
+@keyframes floatItem {
+    0% {
+        transform: translate(0px, 0px);
+        text-shadow: 6px 6px #808080;
+    }
+    65% {
+        transform: translate(0px, 10px);
+        text-shadow: 3px 3px #505050; 
+    }
+    100% {
+        transform: translate(0px, -1px); 
+        text-shadow: 10px 10px #808080; 
     }
 }

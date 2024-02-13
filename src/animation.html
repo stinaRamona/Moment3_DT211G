@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moment 4 DT211G</title>
     <link rel="stylesheet" href="css/main.scss">
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
 </head>
 <body>
     <nav>
@@ -26,7 +26,7 @@
         <ul>
             <li><a href="index.html">Start</a></li>
             <li><a href="sass.html">SASS</a></li>
-            <li><a href="#">#</a></li>
+            <li><a href="animation.html">Animering</a></li>
             <li><a href="#">#</a></li>
             <li><a href="#">#</a></li>
         </ul>
@@ -39,12 +39,19 @@
         <div id="animation1">
             <p>TEST TEST</p>
         </div> 
-        <h2>Boll som rullar</h2>
-        <div id="pictureContainer">
-            <img id="bollBild" src="/images/boll.webp" alt="Boll som rullar">
-        </div>
 
+        <h2>Textanimation</h2>
+        <h2 id="animation2">Hover over me!</h2>
+        <h2 id="floatingTxt">I'm floating!</h2>
+
+        <h2>Användarinteraktion</h2>
+        <button id="animation3">Press me!</button>
     </main>
+
+    <h2 id="bollHeading">Boll som rullar</h2>
+    <div id="pictureContainer">
+        <img id="bollBild" src="/images/boll.webp" alt="Boll som rullar">
+    </div>
 
     <footer>
         <p>Moment 3 DT211G Mittuniversitetet</p>
