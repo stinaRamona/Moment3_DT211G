@@ -28,7 +28,9 @@ const coursesChartEL = document.getElementById("coursesChart");
 
 const url= "https://studenter.miun.se/~mallar/dt211g/"; 
 
-window.onload = getPrograms; 
+window.onload = getCourses(); 
+
+window.onload = createCoursechart(); 
 
 //För att få fram de populäraste kurserna 
 async function getCourses(){
@@ -43,8 +45,24 @@ async function getCourses(){
         //filtrerar ut så det bara är kurser
         let onlyCourses = mostPop.filter(data => data.type == "Kurs");  
 
-        //console.table(onlyCourses)
+        //let mostPopCourses = onlyCourses.filter(data => data < 6); 
+        
+        // måste kunna göras på ett enklare sätt... FOR LOOP!
+        /*
+        console.table(onlyCourses[Object.keys(onlyCourses)[0]]);
 
+        console.table(onlyCourses[Object.keys(onlyCourses)[1]]);
+
+        console.table(onlyCourses[Object.keys(onlyCourses)[2]]);
+
+        console.table(onlyCourses[Object.keys(onlyCourses)[3]]);
+
+        console.table(onlyCourses[Object.keys(onlyCourses)[4]]);
+
+        console.table(onlyCourses[Object.keys(onlyCourses)[5]]);
+        */ 
+
+        console.table(onlyCourses[0], [1], [2], [3], [4], [5]) // fungerade inte heller
     } catch {
         console.log("Något gick fel..."); 
     }
@@ -60,7 +78,7 @@ async function getPrograms(){
         //sorterar så mest sökta kommer först
         let mostPop = programs.sort((a,b) => b.applicantsTotal - a.applicantsTotal);
         
-        //filtrerar ut så det bara är kurser
+        //filtrerar ut så det bara är program
         let onlyPrograms = mostPop.filter(data => data.type == "Program");  
 
         console.table(onlyPrograms)
@@ -71,6 +89,7 @@ async function getPrograms(){
 }
 
 //Skapa diagramen 
+function createCoursechart() {
 new Chart(coursesChartEL, {
     type: 'bar', 
     data: {
@@ -82,3 +101,4 @@ new Chart(coursesChartEL, {
         }]
     },
 }); 
+}
