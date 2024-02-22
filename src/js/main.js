@@ -26,11 +26,17 @@ function toggleMenu() {
 
 const coursesChartEL = document.getElementById("coursesChart"); 
 
+const programChartEl = document.getElementById("programChart"); 
+
 const url= "https://studenter.miun.se/~mallar/dt211g/"; 
 
-window.onload = getCourses(); 
+window.onload = getCourses();
+
+window.onload = getPrograms(); 
 
 window.onload = createCoursechart(); 
+
+window.onload= createProgramchart(); 
 
 //För att få fram de populäraste kurserna 
 async function getCourses(){
@@ -44,29 +50,37 @@ async function getCourses(){
         
         //filtrerar ut så det bara är kurser
         let onlyCourses = mostPop.filter(data => data.type == "Kurs");  
+ 
+        // Loopar för att få ut de 6 mest populära 
+        let courseArr = []; 
 
-        //let mostPopCourses = onlyCourses.filter(data => data < 6); 
+        for(let i = 0; i < 6; i++) {
+            courseArr.push(onlyCourses[i]);
+             
+        } 
+
+        createCoursechart(courseArr); 
         
-        // måste kunna göras på ett enklare sätt... FOR LOOP!
-        /*
-        console.table(onlyCourses[Object.keys(onlyCourses)[0]]);
-
-        console.table(onlyCourses[Object.keys(onlyCourses)[1]]);
-
-        console.table(onlyCourses[Object.keys(onlyCourses)[2]]);
-
-        console.table(onlyCourses[Object.keys(onlyCourses)[3]]);
-
-        console.table(onlyCourses[Object.keys(onlyCourses)[4]]);
-
-        console.table(onlyCourses[Object.keys(onlyCourses)[5]]);
-        */ 
-
-        console.table(onlyCourses[0], [1], [2], [3], [4], [5]) // fungerade inte heller
     } catch {
         console.log("Något gick fel..."); 
     }
 } 
+
+//Skapa diagramen 
+function createCoursechart(courseArr) {
+    new Chart(coursesChartEL, {
+        type: 'bar', 
+        data: {
+            labels: courseArr.map(row => row.name), 
+            datasets: [{
+                label: '# of applicants',
+                data: courseArr.map(row => row.applicantsTotal), 
+                borderWidth: 1
+            }]
+        },
+    }); 
+    }
+
 
 //För att få fram de populäsraste programmen
 async function getPrograms(){
@@ -81,7 +95,15 @@ async function getPrograms(){
         //filtrerar ut så det bara är program
         let onlyPrograms = mostPop.filter(data => data.type == "Program");  
 
-        console.table(onlyPrograms)
+         // Loopar för att få ut de 6 mest populära 
+         let programArr = []; 
+
+         for(let i = 0; i < 6; i++) {
+             programArr.push(onlyPrograms[i]);
+              
+         } 
+ 
+        createProgramchart(programArr); 
 
     } catch {
         console.log("Något gick fel..."); 
@@ -89,16 +111,16 @@ async function getPrograms(){
 }
 
 //Skapa diagramen 
-function createCoursechart() {
-new Chart(coursesChartEL, {
-    type: 'bar', 
-    data: {
-        labels: ['Red', 'Blue', 'Green', 'Orange'], 
-        datasets: [{
-            label: '# of votes',
-            data: [12, 24, 15, 13], 
-            borderWidth: 1
-        }]
-    },
-}); 
-}
+function createProgramchart(programArr) {
+    new Chart(programChartEl, {
+        type: 'pie', 
+        data: {
+            labels: programArr.map(row => row.name), 
+            datasets: [{
+                label: '# of applicants',
+                data: programArr.map(row => row.applicantsTotal), 
+                borderWidth: 1
+            }]
+        },
+    }); 
+    }
