@@ -98,7 +98,7 @@ async function getPrograms(){
          // Loopar för att få ut de 6 mest populära 
          let programArr = []; 
 
-         for(let i = 0; i < 6; i++) {
+         for(let i = 0; i < 5; i++) {
              programArr.push(onlyPrograms[i]);
               
          } 

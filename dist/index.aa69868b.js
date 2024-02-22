@@ -63,7 +63,7 @@ async function getPrograms() {
         let onlyPrograms = mostPop.filter((data)=>data.type == "Program");
         // Loopar för att få ut de 6 mest populära 
         let programArr = [];
-        for(let i = 0; i < 6; i++)programArr.push(onlyPrograms[i]);
+        for(let i = 0; i < 5; i++)programArr.push(onlyPrograms[i]);
         createProgramchart(programArr);
     } catch  {
         console.log("N\xe5got gick fel...");
