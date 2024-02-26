@@ -1,10 +1,12 @@
 "use strict";
-//För att få knappen att skicka sökvärdet
-function btnFunction() {
-    let searchBtnEl = document.getElementById("searchBtn");
-    searchBtnEl.addEventListener("click", inputValue);
-}
-btnFunction();
+//Hämtar element från DOM
+let searchBtnEl = document.getElementById("searchBtn");
+let mapContainer = document.getElementById("map");
+let map;
+//Eventlyssnare för knappen
+searchBtnEl.addEventListener("click", inputValue);
+//Kallar på en karta vid inladdning av sidan 
+window.onload = createMap(59.3293, 18.0686);
 //För att få in värdet i api:n 
 function inputValue() {
     let searchBarValueEl = document.getElementById("searchBar").value;
@@ -23,19 +25,16 @@ async function getMapInfo(mapURL) {
         console.log("N\xe5got gick galet...");
     }
 }
-//Skapar kartan med hjälp av latitud och longitud för sökningen
+// Skapar eller uppdaterar kartan med hjälp av latitud och longitud för sökningen
 function createMap(lat, long) {
-    if (lat == null && long == null) {
-        var map = L.map("map").setView([
-            58.41086,
-            15.62157
-        ], 13);
-        L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-            maxZoom: 19,
-            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        }).addTo(map);
-    } else {
-        var map = L.map("map").setView([
+    if (map) // Flytta kartan till den nya platsen
+    map.setView([
+        lat,
+        long
+    ], 13);
+    else {
+        // Skapa kartan för första gången
+        map = L.map(mapContainer).setView([
             lat,
             long
         ], 13);
@@ -44,7 +43,11 @@ function createMap(lat, long) {
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         }).addTo(map);
     }
+    // Lägg till markören på den nya platsen
+    L.marker([
+        lat,
+        long
+    ]).addTo(map);
 }
-createMap(); //OM KARTAN KALLAS PÅ FÖRST KAN DEN INTE UPPDATERAS SEN. BEHÖVER KUNNA SÖKA FÖERA GÅNGER. 
 
 //# sourceMappingURL=map.a1438cb9.js.map

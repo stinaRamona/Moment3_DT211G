@@ -1,14 +1,15 @@
 "use strict";      
 
+//Hämtar element från DOM
+let searchBtnEl = document.getElementById("searchBtn"); 
+let mapContainer = document.getElementById("map");
+let map; 
 
-//För att få knappen att skicka sökvärdet
-function btnFunction() { 
-    let searchBtnEl = document.getElementById("searchBtn"); 
+//Eventlyssnare för knappen
+searchBtnEl.addEventListener('click', inputValue); 
 
-    searchBtnEl.addEventListener('click', inputValue); 
-} 
-
-btnFunction(); 
+//Kallar på en karta vid inladdning av sidan 
+window.onload = createMap(59.3293, 18.0686); 
 
 //För att få in värdet i api:n 
 function inputValue() {
@@ -38,25 +39,21 @@ async function getMapInfo(mapURL){
     }
 } 
 
-//Skapar kartan med hjälp av latitud och longitud för sökningen
-function createMap(lat, long) { 
 
-    if (lat == null && long == null){
-        var map = L.map('map').setView([58.41086, 15.62157], 13);  
-        
-        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        }).addTo(map);
-
+// Skapar eller uppdaterar kartan med hjälp av latitud och longitud för sökningen
+function createMap(lat, long) {
+    if (map) {
+        // Flytta kartan till den nya platsen
+        map.setView([lat, long], 13);
     } else {
-        var map = L.map('map').setView([lat, long], 13);  
-        
+        // Skapa kartan för första gången
+        map = L.map(mapContainer).setView([lat, long], 13);
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        }).addTo(map); 
-} 
-}
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+    }
 
-createMap(); //OM KARTAN KALLAS PÅ FÖRST KAN DEN INTE UPPDATERAS SEN. BEHÖVER KUNNA SÖKA FÖERA GÅNGER. 
+    // Lägg till markören på den nya platsen
+    L.marker([lat, long]).addTo(map);
+} 
