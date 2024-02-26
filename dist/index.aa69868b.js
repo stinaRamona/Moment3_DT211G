@@ -46,9 +46,14 @@ function createCoursechart(courseArr) {
                 {
                     label: "# of applicants",
                     data: courseArr.map((row)=>row.applicantsTotal),
-                    borderWidth: 1
+                    borderWidth: 1,
+                    backgroundColor: "#49234490"
                 }
             ]
+        },
+        options: {
+            responsive: true,
+            indexAxis: "y"
         }
     });
 }

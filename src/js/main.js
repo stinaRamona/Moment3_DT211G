@@ -75,12 +75,16 @@ function createCoursechart(courseArr) {
             datasets: [{
                 label: '# of applicants',
                 data: courseArr.map(row => row.applicantsTotal), 
-                borderWidth: 1
+                borderWidth: 1,
+                backgroundColor: '#49234490',
             }]
         },
-    }); 
-    }
-
+        options:{ 
+            responsive: true,
+            indexAxis: "y", 
+        },
+    });
+    } 
 
 //För att få fram de populäsraste programmen
 async function getPrograms(){
