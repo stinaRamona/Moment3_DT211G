@@ -3,7 +3,7 @@
 //Hämtar element från DOM
 let searchBtnEl = document.getElementById("searchBtn"); 
 let mapContainer = document.getElementById("map");
-//let map; //skapar en tom variabel som kommer deklareras senare
+let map; //skapar en tom variabel som kommer deklareras senare
 
 //Eventlyssnare för knappen
 searchBtnEl.addEventListener('click', inputValue); 
@@ -42,7 +42,6 @@ async function getMapInfo(mapURL){
 
 // Skapar eller uppdaterar kartan med hjälp av latitud och longitud för sökningen
 function createMap(lat, long) {
-    let map;
     if (map) {
         // Flytta kartan till den nya platsen
         map.setView([lat, long], 13);
